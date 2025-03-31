@@ -1,0 +1,51 @@
+
+  html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+header {
+    text-align: center;
+}
+
+
+.container1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+body {
+
+    font-family: Arial, sans-serif;
+    padding: 250px;
+    margin: 0;
+    background-color: #065f19; 
+}
+
+.stylish-button {
+    width: 400px;
+    height: 100px;
+    margin: 10px; 
+    background-color: #4CAF50; 
+    color: white; 
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+
+.stylish-button:hover {
+    background-color: #45a049; 
+}
+
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+}
+

@@ -1,0 +1,83 @@
+header {
+    background-color: #006400;
+    color: rgb(255, 255, 255);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+}
+
+header img {
+    max-height: 100px; 
+}
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1bb12f;
+    margin: 0;
+    padding: 0;
+    padding: 150px;
+}
+
+.login-container {
+    background-color: #ffffff;
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 50px;
+    padding: 70px;
+    border: 2px solid #047e15;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+}
+
+form {
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+button[type="submit"] {
+    background-color: #0a7024;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #06b30070;
+}
+
+.create-account-text {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.create-account-text a {
+    color: #238a16;
+    text-decoration: none;
+}

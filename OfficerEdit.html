@@ -1,0 +1,113 @@
+<?php 
+session_start();
+
+	include("connection.php");
+	include("adminfunctions.php");
+
+
+	if($_SERVER['REQUEST_METHOD'] == "POST")
+	{
+		$officer_username = $_POST['officer_username'];
+		$officer_password = $_POST['officer_password'];
+        $officer_id = random_num(20);
+        $officer_name = $_POST['officer_name'];
+        $officer_province = $_POST['officerprovince'];
+        $officer_contact = $_POST['officerphone'];
+        $service_center = $_POST['oasc'];
+        
+        $query = "insert into officer (officer_id,officer_name,officer_province,officer_contact,service_center,officer_username,officer_password) 
+                    values ('$officer_id','$officer_name','$officer_province','$officer_contact','$service_center','$officer_username','$officer_password')";
+
+			mysqli_query($con, $query);
+
+			header("Location: OfficerSettings.php");
+			die;
+	}
+?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>officer edit Interface</title>
+    <link rel="stylesheet" href="cssstyle/officer.css">
+</head>
+<body>
+    <header>
+        
+        <img src="picture/Department-LOGO.png" alt="Department of Agriculture Logo" onclick="showConfirmation()" style="cursor: pointer;" title="Click to return home page">
+        
+        <script>
+            function showConfirmation() {
+                var confirmation = confirm("Do you want to return to the home page?");
+                if (confirmation) {
+                    window.location.href = "index.html";
+                } 
+                else{}
+            }
+
+          
+        </script>
+
+        <h2>Ecological Farming and Services </h2>
+    </header>
+
+    <div class="topic">       
+        <h1>Officer edit interface</h1> 
+        
+    </div>
+
+    <div class="container">
+        <div class="box">
+            
+            <h3>Edit Officer Details</h3>
+            <form method="post">
+        <div class="form-group">
+                <label for="officername">Edit officer name</label>
+                <input type="text" id="officername" value="<?php echo $officer_data['officer_name']; ?>" name="officer_name" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Edit Phone Number</label>
+                <input type="tel" id="phone" value="<?php echo $officer_data['officer_contact']; ?>" name="officerphone" required>
+            </div>
+            <div class="form-group">
+                <label for="Province">Edit Officer Province</label>
+                <select id="Province" required name="officerprovince" value="<?php echo $officer_data['officer_province']; ?>">
+                    <option value="Central">Central Province</option>
+                    <option value="North Central">North Central Province</option>
+                    <option value="Sabaragamuwa">Sabaragamuwa Province</option>
+                    <option value="Uva Province">Uva Province</option>
+                    <option value="North Western">North Western Province</option>
+                    <option value="Eastern">Eastern Province</option>
+                    <option value="Western">Western Province</option>
+                    <option value="Southern">Southern Province</option>
+                    <option value="Northern">Northern Province</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="Agrarian Service Center">Edit Agrarian Service Center: </label>
+                <input type="text" id="asc" required value="<?php echo $officer_data['service_center']; ?>" name="oasc">
+            </div>
+            <div class="form-group">
+                <label for="officerusername">Edit Username</label>
+                <input type="text" id="officerusername" value="<?php echo $officer_data['officer_username']; ?>" name="officer_username" required>
+            </div>
+            <div class="form-group">
+                <label for="officerpassword">Edit password: </label>
+                <input type="text" id="officerpassword" name="officer_password" value="<?php echo $officer_data['officer_password']; ?>" required>
+            </div>
+            <button type="submit" class="submit-button">Update officer details</button>
+        </form>
+        </div>
+    </div>
+
+<footer>
+        <p>&copy; 2023 Department of Agriculture</p>
+        <p>All rights resvered</p>  
+</footer>
+
+<script src="JavaScript/script.js"></script>
+</body>
+</html>
